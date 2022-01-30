@@ -51,10 +51,8 @@
 		4A2DCED427A6DB9F00F32B59 /* InternationalTime */ = {
 			isa = PBXGroup;
 			children = (
-				4A2DCED527A6DB9F00F32B59 /* InternationalTimeApp.swift */,
-				4A2DCED727A6DB9F00F32B59 /* ContentView.swift */,
-				4A2DCED927A6DBA100F32B59 /* Assets.xcassets */,
-				4A2DCEDB27A6DBA100F32B59 /* Preview Content */,
+				4A2DCEE327A6DBB800F32B59 /* Supporting Files */,
+				4A2DCEE427A6DBF400F32B59 /* Views */,
 			);
 			path = InternationalTime;
 			sourceTree = "<group>";
@@ -65,6 +63,24 @@
 				4A2DCEDC27A6DBA100F32B59 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A2DCEE327A6DBB800F32B59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A2DCED527A6DB9F00F32B59 /* InternationalTimeApp.swift */,
+				4A2DCED927A6DBA100F32B59 /* Assets.xcassets */,
+				4A2DCEDB27A6DBA100F32B59 /* Preview Content */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A2DCEE427A6DBF400F32B59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A2DCED727A6DB9F00F32B59 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +284,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InternationalTime/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"InternationalTime/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = D39D28Y5QZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -298,7 +314,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InternationalTime/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"InternationalTime/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = D39D28Y5QZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
