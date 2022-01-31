@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
+    @State private var isSpeaking = false
     
     var body: some View {
         content
@@ -21,15 +22,7 @@ struct ContentView: View {
             Spacer()
             speechCard
             Spacer()
-            Image(systemName: "mic")
-                .font(.title)
-                .onPressGesture {
-                    speechRecognizer.reset()
-                    speechRecognizer.transcribe()
-                } onRelease: {
-                    speechRecognizer.stopTranscribing()
-                }
-
+            speakButton
         }
     }
     @ViewBuilder
@@ -48,6 +41,23 @@ struct ContentView: View {
             .shadow(radius: 4)
             .padding(.horizontal, 64)
         }
+    }
+    @ViewBuilder
+    var speakButton: some View {
+        Image(systemName: "mic")
+            .font(.title)
+            .padding()
+            .background(
+                Circle().foregroundColor(isSpeaking ? .red : .clear)
+            )
+            .onPressGesture {
+                isSpeaking = true
+                speechRecognizer.reset()
+                speechRecognizer.transcribe()
+            } onRelease: {
+                isSpeaking = false
+                speechRecognizer.stopTranscribing()
+            }
     }
 }
 
