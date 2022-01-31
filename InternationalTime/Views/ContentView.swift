@@ -51,6 +51,8 @@ struct ContentView: View {
                 Circle().foregroundColor(isSpeaking ? .red : .clear)
             )
             .onPressGesture {
+                let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                impactHeavy.impactOccurred()
                 isSpeaking = true
                 speechRecognizer.reset()
                 speechRecognizer.transcribe()
