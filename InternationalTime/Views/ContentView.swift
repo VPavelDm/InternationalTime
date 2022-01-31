@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var speechRecognizer = SpeechRecognizer()
     
     var body: some View {
-        Text("Скажи что-нибудь")
+        content
+            .onAppear {
+                speechRecognizer.reset()
+                speechRecognizer.transcribe()
+            }
+            .onDisappear {
+                speechRecognizer.stopTranscribing()
+            }
+    }
+    @ViewBuilder
+    var content: some View {
+        if speechRecognizer.transcript.isEmpty {
+            Text("Скажи что-нибудь")
+        } else {
+            Text(speechRecognizer.transcript)
+        }
     }
 }
 

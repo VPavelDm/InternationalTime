@@ -13,7 +13,7 @@ import AVFoundation
 class SpeechRecognizer: ObservableObject {
     
     // MARK: - Outputs
-    var transcript: String = ""
+    @Published var transcript: String = ""
     
     // MARK: - Properties
     private var audioEngine: AVAudioEngine?
