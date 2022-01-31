@@ -9,12 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
+    @StateObject private var viewModel = ContentViewModel()
     @State private var isSpeaking = false
+    @State private var speakTogetherAlertPresented = true
     
     var body: some View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(hex: "#f3f3f4"))
+            .alert("Enable sharing content", isPresented: $speakTogetherAlertPresented) {
+                Button {
+                    viewModel.startSharing()
+                } label: {
+                    Text("Start sharing")
+                }
+            }
     }
     @ViewBuilder
     var content: some View {

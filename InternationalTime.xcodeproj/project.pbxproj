@@ -16,6 +16,8 @@
 		4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */; };
 		4A999D5427A86605002A5D04 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5327A86605002A5D04 /* Color+hex.swift */; };
 		4A999D5727A868D6002A5D04 /* PressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5627A868D6002A5D04 /* PressGesture.swift */; };
+		4A999D5A27A8701A002A5D04 /* SpeakTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5927A8701A002A5D04 /* SpeakTogether.swift */; };
+		4A999D5C27A87147002A5D04 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5B27A87147002A5D04 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession + hasPermissionToRecord.swift"; sourceTree = "<group>"; };
 		4A999D5327A86605002A5D04 /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
 		4A999D5627A868D6002A5D04 /* PressGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressGesture.swift; sourceTree = "<group>"; };
+		4A999D5827A86FCC002A5D04 /* InternationalTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InternationalTime.entitlements; sourceTree = "<group>"; };
+		4A999D5927A8701A002A5D04 /* SpeakTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakTogether.swift; sourceTree = "<group>"; };
+		4A999D5B27A87147002A5D04 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 		4A2DCED427A6DB9F00F32B59 /* InternationalTime */ = {
 			isa = PBXGroup;
 			children = (
+				4A999D5827A86FCC002A5D04 /* InternationalTime.entitlements */,
 				4A2DCEE327A6DBB800F32B59 /* Supporting Files */,
 				4A2DCEFC27A6FEDC00F32B59 /* Core */,
 				4A2DCEFD27A6FEE200F32B59 /* Services */,
@@ -100,6 +106,7 @@
 		4A2DCEFA27A6FED000F32B59 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4A999D5B27A87147002A5D04 /* ContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -107,6 +114,7 @@
 		4A2DCEFB27A6FED600F32B59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4A999D5927A8701A002A5D04 /* SpeakTogether.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +228,8 @@
 				4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */,
 				4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */,
 				4A999D5427A86605002A5D04 /* Color+hex.swift in Sources */,
+				4A999D5A27A8701A002A5D04 /* SpeakTogether.swift in Sources */,
+				4A999D5C27A87147002A5D04 /* ContentViewModel.swift in Sources */,
 				4A2DCED627A6DB9F00F32B59 /* InternationalTimeApp.swift in Sources */,
 				4A999D5727A868D6002A5D04 /* PressGesture.swift in Sources */,
 				4A999D5027A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift in Sources */,
@@ -350,10 +360,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InternationalTime/InternationalTime.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InternationalTime/Supporting Files/Preview Content\"";
-				DEVELOPMENT_TEAM = D39D28Y5QZ;
+				DEVELOPMENT_TEAM = YGPW8F225S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give me an access please to your micro";
@@ -369,7 +380,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vpaveldm.international.InternationalTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.schibstedbelarus.kufar.InternationalTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -382,10 +393,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InternationalTime/InternationalTime.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InternationalTime/Supporting Files/Preview Content\"";
-				DEVELOPMENT_TEAM = D39D28Y5QZ;
+				DEVELOPMENT_TEAM = YGPW8F225S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give me an access please to your micro";
@@ -401,7 +413,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vpaveldm.international.InternationalTime;
+				PRODUCT_BUNDLE_IDENTIFIER = com.schibstedbelarus.kufar.InternationalTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
