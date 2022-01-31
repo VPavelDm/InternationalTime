@@ -11,6 +11,9 @@
 		4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DCED727A6DB9F00F32B59 /* ContentView.swift */; };
 		4A2DCEDA27A6DBA100F32B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2DCED927A6DBA100F32B59 /* Assets.xcassets */; };
 		4A2DCEDD27A6DBA100F32B59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2DCEDC27A6DBA100F32B59 /* Preview Assets.xcassets */; };
+		4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D4C27A85BF3002A5D04 /* SpeechRecognizer.swift */; };
+		4A999D5027A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */; };
+		4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		4A2DCED727A6DB9F00F32B59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A2DCED927A6DBA100F32B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A2DCEDC27A6DBA100F32B59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A999D4C27A85BF3002A5D04 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer + hasAuthorizationToRecognize.swift"; sourceTree = "<group>"; };
+		4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession + hasPermissionToRecord.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,11 @@
 			isa = PBXGroup;
 			children = (
 				4A2DCEE327A6DBB800F32B59 /* Supporting Files */,
+				4A2DCEFC27A6FEDC00F32B59 /* Core */,
+				4A2DCEFD27A6FEE200F32B59 /* Services */,
+				4A2DCEFB27A6FED600F32B59 /* Models */,
 				4A2DCEE427A6DBF400F32B59 /* Views */,
+				4A2DCEFA27A6FED000F32B59 /* ViewModels */,
 			);
 			path = InternationalTime;
 			sourceTree = "<group>";
@@ -81,6 +91,45 @@
 				4A2DCED727A6DB9F00F32B59 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4A2DCEFA27A6FED000F32B59 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A2DCEFB27A6FED600F32B59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A2DCEFC27A6FEDC00F32B59 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4A999D4E27A85CC3002A5D04 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4A2DCEFD27A6FEE200F32B59 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A999D4C27A85BF3002A5D04 /* SpeechRecognizer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A999D4E27A85CC3002A5D04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */,
+				4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */,
+				4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */,
+				4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */,
 				4A2DCED627A6DB9F00F32B59 /* InternationalTimeApp.swift in Sources */,
+				4A999D5027A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,12 +340,14 @@
 				DEVELOPMENT_TEAM = D39D28Y5QZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give me an access please to your micro";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Give me an access please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,12 +372,14 @@
 				DEVELOPMENT_TEAM = D39D28Y5QZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give me an access please to your micro";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Give me an access please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
