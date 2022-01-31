@@ -46,10 +46,9 @@ struct ContentView: View {
     var speakButton: some View {
         Image(systemName: "mic")
             .font(.title)
+            .foregroundColor(isSpeaking ? .red : .black)
             .padding()
-            .background(
-                Circle().foregroundColor(isSpeaking ? .red : .clear)
-            )
+            .padding(.bottom, 64)
             .onPressGesture {
                 let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
                 impactHeavy.impactOccurred()
