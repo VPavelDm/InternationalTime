@@ -14,6 +14,8 @@
 		4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D4C27A85BF3002A5D04 /* SpeechRecognizer.swift */; };
 		4A999D5027A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */; };
 		4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */; };
+		4A999D5427A86605002A5D04 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5327A86605002A5D04 /* Color+hex.swift */; };
+		4A999D5727A868D6002A5D04 /* PressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5627A868D6002A5D04 /* PressGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		4A999D4C27A85BF3002A5D04 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer + hasAuthorizationToRecognize.swift"; sourceTree = "<group>"; };
 		4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession + hasPermissionToRecord.swift"; sourceTree = "<group>"; };
+		4A999D5327A86605002A5D04 /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
+		4A999D5627A868D6002A5D04 /* PressGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		4A2DCEFC27A6FEDC00F32B59 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4A999D5527A868CC002A5D04 /* ViewModifiers */,
 				4A999D4E27A85CC3002A5D04 /* Extensions */,
 			);
 			path = Core;
@@ -128,8 +133,17 @@
 			children = (
 				4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */,
 				4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */,
+				4A999D5327A86605002A5D04 /* Color+hex.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A999D5527A868CC002A5D04 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4A999D5627A868D6002A5D04 /* PressGesture.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +219,9 @@
 				4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */,
 				4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */,
 				4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */,
+				4A999D5427A86605002A5D04 /* Color+hex.swift in Sources */,
 				4A2DCED627A6DB9F00F32B59 /* InternationalTimeApp.swift in Sources */,
+				4A999D5727A868D6002A5D04 /* PressGesture.swift in Sources */,
 				4A999D5027A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

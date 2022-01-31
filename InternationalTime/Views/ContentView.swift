@@ -12,20 +12,41 @@ struct ContentView: View {
     
     var body: some View {
         content
-            .onAppear {
-                speechRecognizer.reset()
-                speechRecognizer.transcribe()
-            }
-            .onDisappear {
-                speechRecognizer.stopTranscribing()
-            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(hex: "#f3f3f4"))
     }
     @ViewBuilder
     var content: some View {
-        if speechRecognizer.transcript.isEmpty {
-            Text("Скажи что-нибудь")
-        } else {
-            Text(speechRecognizer.transcript)
+        VStack {
+            Spacer()
+            speechCard
+            Spacer()
+            Image(systemName: "mic")
+                .font(.title)
+                .onPressGesture {
+                    speechRecognizer.reset()
+                    speechRecognizer.transcribe()
+                } onRelease: {
+                    speechRecognizer.stopTranscribing()
+                }
+
+        }
+    }
+    @ViewBuilder
+    var speechCard: some View {
+        if !speechRecognizer.transcript.isEmpty {
+            VStack(alignment: .leading) {
+                Text("Paul")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                Text(speechRecognizer.transcript)
+                    .font(.body)
+            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(16)
+            .shadow(radius: 4)
+            .padding(.horizontal, 64)
         }
     }
 }
