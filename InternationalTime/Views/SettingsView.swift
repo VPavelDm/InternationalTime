@@ -20,6 +20,7 @@ struct SettingsView: View {
         .popup(isPresented: $showChooseLanguages) {
             LanguagesView(language: $language, isPresented: $showChooseLanguages)
         }
+        .navigationTitle("Settings")
     }
     
     var nameSection: some View {
