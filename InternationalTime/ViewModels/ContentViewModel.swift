@@ -14,7 +14,7 @@ class ContentViewModel: ObservableObject {
     
     // MARK: - Outputs
     @Published var groupSession: GroupSession<SpeakTogether>?
-    @Published var message: String = ""
+    @Published var message: SpeechMessage?
     @AppStorage("username") var name: String = ""
     @Published var language: Language = Language.languages.first!
 
@@ -40,7 +40,7 @@ class ContentViewModel: ObservableObject {
         
         let task = Task {
             for await (message, _) in messenger.messages(of: SpeechMessage.self) {
-                handle(message)
+                self.message = message
             }
         }
         tasks.insert(task)
@@ -56,10 +56,5 @@ class ContentViewModel: ObservableObject {
                                                         name: name))
             }
         }
-    }
-    
-    // MARK: - Utils
-    private func handle(_ message: SpeechMessage) {
-        self.message = message.message
     }
 }

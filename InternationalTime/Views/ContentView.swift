@@ -65,10 +65,13 @@ struct ContentView: View {
     }
     @ViewBuilder
     var speechCards: some View {
-        if !speechRecognizer.transcript.isEmpty {
-            speechCard(speechRecognizer.transcript, name: "Paul")
-        } else if !viewModel.message.isEmpty {
-            speechCard(viewModel.message, name: "Alla")
+        VStack {
+            if !speechRecognizer.transcript.isEmpty {
+                speechCard(speechRecognizer.transcript, name: viewModel.name)
+            }
+            if let message = viewModel.message {
+                speechCard(message.message, name: message.name)
+            }
         }
     }
     @ViewBuilder
@@ -105,7 +108,6 @@ struct ContentView: View {
         } label: {
             Image(systemName: "gearshape")
         }
-
     }
 }
 
