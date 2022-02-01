@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var name: String = ""
     @State private var showChooseLanguages = false
+    @Binding var name: String
     @Binding var language: Language
     
     var body: some View {
@@ -57,6 +57,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(language: .constant(Language.languages.first!))
+        SettingsView(name: .constant("Paul"), language: .constant(Language.languages.first!))
     }
 }

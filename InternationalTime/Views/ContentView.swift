@@ -101,7 +101,7 @@ struct ContentView: View {
     }
     var settingsButton: some View {
         NavigationLink(isActive: $showSettings) {
-            SettingsView(language: $viewModel.language)
+            SettingsView(name: $viewModel.name, language: $viewModel.language)
         } label: {
             Image(systemName: "gearshape")
         }

@@ -10,4 +10,5 @@ import Foundation
 struct SpeechMessage: Codable {
     var message: String
     var languageIdentifier: String
+    var name: String
 }
