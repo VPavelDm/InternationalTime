@@ -20,11 +20,12 @@ class SpeechRecognizer: ObservableObject {
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
-    private let recognizer: SFSpeechRecognizer?
+    private var recognizer: SFSpeechRecognizer?
     
     // MARK: - Inits
-    init() {
-        recognizer = SFSpeechRecognizer()
+    func setup(languageIdentifier: String) {
+        reset()
+        recognizer = SFSpeechRecognizer(locale: .init(identifier: languageIdentifier))
         
         Task(priority: .background) {
             do {

@@ -36,10 +36,8 @@ struct ContentView: View {
                         viewModel.configureGroupSession(session)
                     }
                 }
-                .onChange(of: speechRecognizer.transcript) { transcript in
-                    viewModel.sendMessage(transcript,
-                                          name: userSettings.name,
-                                          languageIdentifier: userSettings.language.identifier)
+                .onAppear {
+                    speechRecognizer.setup(languageIdentifier: userSettings.language.identifier)
                 }
         }
     }
