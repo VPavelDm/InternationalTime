@@ -9,8 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var showChooseLanguages = false
-    @Binding var name: String
-    @Binding var language: Language
+    @EnvironmentObject var userSettings: UserSettings
     
     var body: some View {
         Form {
@@ -18,7 +17,7 @@ struct SettingsView: View {
             languageSection
         }
         .popup(isPresented: $showChooseLanguages) {
-            LanguagesView(language: $language, isPresented: $showChooseLanguages)
+            LanguagesView(language: $userSettings.language, isPresented: $showChooseLanguages)
         }
         .navigationTitle("Settings")
     }
@@ -28,7 +27,7 @@ struct SettingsView: View {
             HStack {
                 Image(systemName: "person.fill")
                 Text("Ваше имя")
-                TextField(text: $name, prompt: Text("Введите имя")) {
+                TextField(text: $userSettings.name, prompt: Text("Введите имя")) {
                     Text("")
                 }
                 .multilineTextAlignment(.trailing)
@@ -46,7 +45,7 @@ struct SettingsView: View {
                 Button {
                     showChooseLanguages = true
                 } label: {
-                    Text(language.text)
+                    Text(userSettings.language.text)
                 }
             }
         } footer: {
@@ -57,6 +56,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(name: .constant("Paul"), language: .constant(Language.languages.first!))
+        SettingsView()
     }
 }

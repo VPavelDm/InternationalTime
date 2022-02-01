@@ -15,8 +15,6 @@ class ContentViewModel: ObservableObject {
     // MARK: - Outputs
     @Published var groupSession: GroupSession<SpeakTogether>?
     @Published var message: SpeechMessage?
-    @AppStorage("username") var name: String = ""
-    @Published var language: Language = Language.languages.first!
 
     // MARK: - Properties
     private var messenger: GroupSessionMessenger?
@@ -48,11 +46,11 @@ class ContentViewModel: ObservableObject {
         
         groupSession.join()
     }
-    func sendMessage(_ message: String) {
+    func sendMessage(_ message: String, name: String, languageIdentifier: String) {
         if let messenger = messenger {
             Task {
                 try? await messenger.send(SpeechMessage(message: message,
-                                                        languageIdentifier: language.identifier,
+                                                        languageIdentifier: languageIdentifier,
                                                         name: name))
             }
         }

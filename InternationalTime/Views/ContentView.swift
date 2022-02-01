@@ -14,6 +14,7 @@ struct ContentView: View {
     @StateObject private var groupStateObserver = GroupStateObserver()
     @State private var isSpeaking = false
     @State private var showSettings = false
+    @EnvironmentObject var userSettings: UserSettings
     
     var body: some View {
         NavigationView {
@@ -36,7 +37,9 @@ struct ContentView: View {
                     }
                 }
                 .onChange(of: speechRecognizer.transcript) { transcript in
-                    viewModel.sendMessage(transcript)
+                    viewModel.sendMessage(transcript,
+                                          name: userSettings.name,
+                                          languageIdentifier: userSettings.language.identifier)
                 }
         }
     }
@@ -67,7 +70,7 @@ struct ContentView: View {
     var speechCards: some View {
         VStack {
             if !speechRecognizer.transcript.isEmpty {
-                speechCard(speechRecognizer.transcript, name: viewModel.name)
+                speechCard(speechRecognizer.transcript, name: userSettings.name)
             }
             if let message = viewModel.message {
                 speechCard(message.message, name: message.name)
@@ -104,7 +107,7 @@ struct ContentView: View {
     }
     var settingsButton: some View {
         NavigationLink(isActive: $showSettings) {
-            SettingsView(name: $viewModel.name, language: $viewModel.language)
+            SettingsView()
         } label: {
             Image(systemName: "gearshape")
         }
