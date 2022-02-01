@@ -18,7 +18,7 @@ struct SettingsView: View {
             languageSection
         }
         .popup(isPresented: $showChooseLanguages) {
-            LanguagesView(language: $language)
+            LanguagesView(language: $language, isPresented: $showChooseLanguages)
         }
     }
     

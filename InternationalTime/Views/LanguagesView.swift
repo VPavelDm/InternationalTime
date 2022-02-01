@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LanguagesView: View {
     @Binding var language: Language
+    @Binding var isPresented: Bool
     
     var body: some View {
         content
@@ -20,7 +21,7 @@ struct LanguagesView: View {
             .background(Color.black.opacity(0.5))
     }
     var content: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(spacing: 16) {
             ForEach(Language.languages) { language in
                 languageCell(language,
                              isLast: Language.languages.firstIndex(of: language) == Language.languages.count - 1)
@@ -31,10 +32,12 @@ struct LanguagesView: View {
     func languageCell(_ language: Language, isLast: Bool) -> some View {
         Button {
             self.language = language
+            self.isPresented = false
         } label: {
             HStack {
                 Text(language.icon)
                 Text(language.text)
+                Spacer()
             }
         }
         if !isLast {
@@ -45,6 +48,6 @@ struct LanguagesView: View {
 
 struct LanguagesView_Previews: PreviewProvider {
     static var previews: some View {
-        LanguagesView(language: .constant(Language.languages[0]))
+        LanguagesView(language: .constant(Language.languages[0]), isPresented: .constant(true))
     }
 }

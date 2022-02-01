@@ -21,7 +21,7 @@ class PopupHostedViewController<PopupView>: UIHostingController<PopupView> where
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
-        self.isPresented.wrappedValue =  false
+        isPresented.wrappedValue = false
     }
     
 }
