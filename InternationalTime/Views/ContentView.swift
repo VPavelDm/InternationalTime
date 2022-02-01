@@ -31,6 +31,9 @@ struct ContentView: View {
                         viewModel.configureGroupSession(session)
                     }
                 }
+                .onChange(of: speechRecognizer.transcript) { transcript in
+                    viewModel.sendMessage(transcript)
+                }
         }
     }
     @ViewBuilder
