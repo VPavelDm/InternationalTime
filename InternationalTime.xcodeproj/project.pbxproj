@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4A16688A27A9459200564DFE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16688927A9459200564DFE /* Language.swift */; };
 		4A16688C27A9481400564DFE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16688B27A9481400564DFE /* SettingsView.swift */; };
+		4A16688F27A95E5500564DFE /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16688E27A95E5500564DFE /* PopupModifier.swift */; };
+		4A16689127A95E6600564DFE /* PopupHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689027A95E6600564DFE /* PopupHostedViewController.swift */; };
+		4A16689327A95EE500564DFE /* UIApplication+keyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689227A95EE500564DFE /* UIApplication+keyWindow.swift */; };
+		4A16689527A95FAB00564DFE /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689427A95FAB00564DFE /* LanguagesView.swift */; };
 		4A2DCED627A6DB9F00F32B59 /* InternationalTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DCED527A6DB9F00F32B59 /* InternationalTimeApp.swift */; };
 		4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DCED727A6DB9F00F32B59 /* ContentView.swift */; };
 		4A2DCEDA27A6DBA100F32B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2DCED927A6DBA100F32B59 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 /* Begin PBXFileReference section */
 		4A16688927A9459200564DFE /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		4A16688B27A9481400564DFE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4A16688E27A95E5500564DFE /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
+		4A16689027A95E6600564DFE /* PopupHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHostedViewController.swift; sourceTree = "<group>"; };
+		4A16689227A95EE500564DFE /* UIApplication+keyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+keyWindow.swift"; sourceTree = "<group>"; };
+		4A16689427A95FAB00564DFE /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
 		4A2DCED227A6DB9F00F32B59 /* InternationalTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternationalTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2DCED527A6DB9F00F32B59 /* InternationalTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalTimeApp.swift; sourceTree = "<group>"; };
 		4A2DCED727A6DB9F00F32B59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A16688D27A95E4500564DFE /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				4A16688E27A95E5500564DFE /* PopupModifier.swift */,
+				4A16689027A95E6600564DFE /* PopupHostedViewController.swift */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		4A2DCEC927A6DB9F00F32B59 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +123,7 @@
 			children = (
 				4A2DCED727A6DB9F00F32B59 /* ContentView.swift */,
 				4A16688B27A9481400564DFE /* SettingsView.swift */,
+				4A16689427A95FAB00564DFE /* LanguagesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +169,7 @@
 				4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */,
 				4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */,
 				4A999D5327A86605002A5D04 /* Color+hex.swift */,
+				4A16689227A95EE500564DFE /* UIApplication+keyWindow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +177,7 @@
 		4A999D5527A868CC002A5D04 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				4A16688D27A95E4500564DFE /* Popup */,
 				4A999D5627A868D6002A5D04 /* PressGesture.swift */,
 			);
 			path = ViewModifiers;
@@ -233,7 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A16689527A95FAB00564DFE /* LanguagesView.swift in Sources */,
 				4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */,
+				4A16688F27A95E5500564DFE /* PopupModifier.swift in Sources */,
+				4A16689327A95EE500564DFE /* UIApplication+keyWindow.swift in Sources */,
+				4A16689127A95E6600564DFE /* PopupHostedViewController.swift in Sources */,
 				4A999D5E27A87534002A5D04 /* SpeechMessage.swift in Sources */,
 				4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */,
 				4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */,

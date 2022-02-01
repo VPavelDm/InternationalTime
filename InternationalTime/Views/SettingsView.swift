@@ -9,12 +9,16 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var name: String = ""
+    @State private var showChooseLanguages = false
     @Binding var language: Language
     
     var body: some View {
         Form {
             nameSection
             languageSection
+        }
+        .popup(isPresented: $showChooseLanguages) {
+            LanguagesView(language: $language)
         }
     }
     
@@ -39,7 +43,7 @@ struct SettingsView: View {
                 Text("Язык")
                 Spacer()
                 Button {
-                    
+                    showChooseLanguages = true
                 } label: {
                     Text(language.text)
                 }

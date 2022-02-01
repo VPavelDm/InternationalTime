@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Language: Identifiable {
+struct Language: Identifiable, Equatable {
     var id: String { identifier }
     var identifier: String
     var icon: String
@@ -15,6 +15,7 @@ struct Language: Identifiable {
     
     static var languages: [Language] = [
         .init(identifier: "en_US", icon: "🇺🇸", text: "English"),
-        .init(identifier: "ru_RU", icon: "🇷🇺", text: "Русский")
+        .init(identifier: "ru_RU", icon: "🇷🇺", text: "Русский"),
+        .init(identifier: "fr_FR", icon: "🇫🇷", text: "Français")
     ]
 }
