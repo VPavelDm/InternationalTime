@@ -11,25 +11,27 @@ import GroupActivities
 struct ContentView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @StateObject private var viewModel = ContentViewModel()
+    @StateObject private var groupStateObserver = GroupStateObserver()
     @State private var isSpeaking = false
-    @State private var speakTogetherAlertPresented = true
     
     var body: some View {
-        content
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(hex: "#f3f3f4"))
-            .alert("Enable sharing content", isPresented: $speakTogetherAlertPresented) {
-                Button {
-                    viewModel.startSharing()
-                } label: {
-                    Text("Start sharing")
+        NavigationView {
+            content
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color(hex: "#EEEEEE"))
+                .navigationTitle("International Time")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        shareActivity
+                    }
                 }
-            }
-            .task {
-                for await session in SpeakTogether.sessions() {
-                    viewModel.configureGroupSession(session)
+                .task {
+                    for await session in SpeakTogether.sessions() {
+                        viewModel.configureGroupSession(session)
+                    }
                 }
-            }
+        }
     }
     @ViewBuilder
     var content: some View {
@@ -79,6 +81,16 @@ struct ContentView: View {
                 isSpeaking = false
                 speechRecognizer.stopTranscribing()
             }
+    }
+    @ViewBuilder
+    var shareActivity: some View {
+        if viewModel.groupSession == nil && groupStateObserver.isEligibleForGroupSession {
+            Button {
+                viewModel.startSharing()
+            } label: {
+                Image(systemName: "person.2.fill")
+            }
+        }
     }
 }
 
