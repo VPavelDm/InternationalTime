@@ -18,6 +18,7 @@
 		4A999D5727A868D6002A5D04 /* PressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5627A868D6002A5D04 /* PressGesture.swift */; };
 		4A999D5A27A8701A002A5D04 /* SpeakTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5927A8701A002A5D04 /* SpeakTogether.swift */; };
 		4A999D5C27A87147002A5D04 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5B27A87147002A5D04 /* ContentViewModel.swift */; };
+		4A999D5E27A87534002A5D04 /* SpeechMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5D27A87534002A5D04 /* SpeechMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4A999D5827A86FCC002A5D04 /* InternationalTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InternationalTime.entitlements; sourceTree = "<group>"; };
 		4A999D5927A8701A002A5D04 /* SpeakTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakTogether.swift; sourceTree = "<group>"; };
 		4A999D5B27A87147002A5D04 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		4A999D5D27A87534002A5D04 /* SpeechMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				4A999D5927A8701A002A5D04 /* SpeakTogether.swift */,
+				4A999D5D27A87534002A5D04 /* SpeechMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */,
+				4A999D5E27A87534002A5D04 /* SpeechMessage.swift in Sources */,
 				4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */,
 				4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */,
 				4A999D5427A86605002A5D04 /* Color+hex.swift in Sources */,

@@ -13,6 +13,7 @@ import AVFoundation
 class SpeechRecognizer: ObservableObject {
     
     // MARK: - Outputs
+    @MainActor
     @Published var transcript: String = ""
     
     // MARK: - Properties
@@ -78,10 +79,14 @@ class SpeechRecognizer: ObservableObject {
     
     // MARK: - Utils
     private func speak(_ message: String) {
-        transcript = message
+        DispatchQueue.main.async {
+            self.transcript = message
+        }
     }
     private func speakError(_ error: Error) {
-        transcript = "<< \(error.localizedDescription) >>"
+        DispatchQueue.main.async {
+            self.transcript = "<< \(error.localizedDescription) >>"
+        }
     }
     private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
         let audioEngine = AVAudioEngine()
@@ -90,8 +95,8 @@ class SpeechRecognizer: ObservableObject {
         request.shouldReportPartialResults = true
         
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+//        try audioSession.setCategory(.playAndRecord, mode: .default)
+//        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)

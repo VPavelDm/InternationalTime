@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GroupActivities
 
 struct ContentView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
@@ -24,31 +25,41 @@ struct ContentView: View {
                     Text("Start sharing")
                 }
             }
+            .task {
+                for await session in SpeakTogether.sessions() {
+                    viewModel.configureGroupSession(session)
+                }
+            }
     }
     @ViewBuilder
     var content: some View {
         VStack {
             Spacer()
-            speechCard
+            speechCards
             Spacer()
             speakButton
         }
     }
+    func speechCard(_ text: String, name: String) -> some View {
+        VStack(alignment: .leading) {
+            Text(name)
+                .font(.headline)
+                .foregroundColor(.blue)
+            Text(text)
+                .font(.body)
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(16)
+        .shadow(radius: 4)
+        .padding(.horizontal, 64)
+    }
     @ViewBuilder
-    var speechCard: some View {
+    var speechCards: some View {
         if !speechRecognizer.transcript.isEmpty {
-            VStack(alignment: .leading) {
-                Text("Paul")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                Text(speechRecognizer.transcript)
-                    .font(.body)
-            }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(16)
-            .shadow(radius: 4)
-            .padding(.horizontal, 64)
+            speechCard(speechRecognizer.transcript, name: "Paul")
+        } else if !viewModel.message.isEmpty {
+            speechCard(viewModel.message, name: "Alla")
         }
     }
     @ViewBuilder
