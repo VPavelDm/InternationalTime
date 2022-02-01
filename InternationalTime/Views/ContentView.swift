@@ -13,6 +13,7 @@ struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
     @StateObject private var groupStateObserver = GroupStateObserver()
     @State private var isSpeaking = false
+    @State private var showSettings = false
     
     var body: some View {
         NavigationView {
@@ -24,6 +25,9 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         shareActivity
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        settingsButton
                     }
                 }
                 .task {
@@ -94,6 +98,14 @@ struct ContentView: View {
                 Image(systemName: "person.2.fill")
             }
         }
+    }
+    var settingsButton: some View {
+        NavigationLink(isActive: $showSettings) {
+            SettingsView(language: $viewModel.language)
+        } label: {
+            Image(systemName: "gearshape")
+        }
+
     }
 }
 
