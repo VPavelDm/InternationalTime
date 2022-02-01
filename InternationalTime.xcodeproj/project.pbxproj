@@ -14,6 +14,8 @@
 		4A16689327A95EE500564DFE /* UIApplication+keyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689227A95EE500564DFE /* UIApplication+keyWindow.swift */; };
 		4A16689527A95FAB00564DFE /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689427A95FAB00564DFE /* LanguagesView.swift */; };
 		4A16689B27A9C1C900564DFE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689A27A9C1C900564DFE /* UserSettings.swift */; };
+		4A16689D27A9C76C00564DFE /* YandexTranslateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689C27A9C76C00564DFE /* YandexTranslateManager.swift */; };
+		4A16689F27A9C8D300564DFE /* YandexTranslateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16689E27A9C8D300564DFE /* YandexTranslateResponse.swift */; };
 		4A2DCED627A6DB9F00F32B59 /* InternationalTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DCED527A6DB9F00F32B59 /* InternationalTimeApp.swift */; };
 		4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DCED727A6DB9F00F32B59 /* ContentView.swift */; };
 		4A2DCEDA27A6DBA100F32B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2DCED927A6DBA100F32B59 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		4A16689227A95EE500564DFE /* UIApplication+keyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+keyWindow.swift"; sourceTree = "<group>"; };
 		4A16689427A95FAB00564DFE /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
 		4A16689A27A9C1C900564DFE /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		4A16689C27A9C76C00564DFE /* YandexTranslateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexTranslateManager.swift; sourceTree = "<group>"; };
+		4A16689E27A9C8D300564DFE /* YandexTranslateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexTranslateResponse.swift; sourceTree = "<group>"; };
 		4A2DCED227A6DB9F00F32B59 /* InternationalTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternationalTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2DCED527A6DB9F00F32B59 /* InternationalTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalTimeApp.swift; sourceTree = "<group>"; };
 		4A2DCED727A6DB9F00F32B59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,23 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		4A1668A027A9C8FD00564DFE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4A1668A127A9C90900564DFE /* YandexTranslate */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4A1668A127A9C90900564DFE /* YandexTranslate */ = {
+			isa = PBXGroup;
+			children = (
+				4A16689E27A9C8D300564DFE /* YandexTranslateResponse.swift */,
+				4A16689C27A9C76C00564DFE /* YandexTranslateManager.swift */,
+			);
+			path = YandexTranslate;
+			sourceTree = "<group>";
+		};
 		4A2DCEC927A6DB9F00F32B59 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +115,7 @@
 				4A999D5827A86FCC002A5D04 /* InternationalTime.entitlements */,
 				4A2DCEE327A6DBB800F32B59 /* Supporting Files */,
 				4A2DCEFC27A6FEDC00F32B59 /* Core */,
+				4A1668A027A9C8FD00564DFE /* Network */,
 				4A2DCEFD27A6FEE200F32B59 /* Services */,
 				4A2DCEFB27A6FED600F32B59 /* Models */,
 				4A2DCEE427A6DBF400F32B59 /* Views */,
@@ -257,9 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A16689527A95FAB00564DFE /* LanguagesView.swift in Sources */,
+				4A16689D27A9C76C00564DFE /* YandexTranslateManager.swift in Sources */,
 				4A2DCED827A6DB9F00F32B59 /* ContentView.swift in Sources */,
 				4A16688F27A95E5500564DFE /* PopupModifier.swift in Sources */,
 				4A16689327A95EE500564DFE /* UIApplication+keyWindow.swift in Sources */,
+				4A16689F27A9C8D300564DFE /* YandexTranslateResponse.swift in Sources */,
 				4A16689127A95E6600564DFE /* PopupHostedViewController.swift in Sources */,
 				4A999D5E27A87534002A5D04 /* SpeechMessage.swift in Sources */,
 				4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */,

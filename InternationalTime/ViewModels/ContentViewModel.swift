@@ -17,8 +17,10 @@ class ContentViewModel: ObservableObject {
     @Published var message: SpeechMessage?
 
     // MARK: - Properties
+    private let translateManager = YandexTranslateManager()
     private var messenger: GroupSessionMessenger?
     private var tasks = Set<Task<Void, Never>>()
+    var userSettings: UserSettings?
 
     // MARK: - Intents
     func startSharing() {
@@ -38,7 +40,7 @@ class ContentViewModel: ObservableObject {
         
         let task = Task {
             for await (message, _) in messenger.messages(of: SpeechMessage.self) {
-                self.message = message
+                handle(message: message)
             }
         }
         tasks.insert(task)
@@ -54,5 +56,22 @@ class ContentViewModel: ObservableObject {
                                                         name: name))
             }
         }
+    }
+    
+    // MARK: - Utils
+    private func handle(message: SpeechMessage) {
+        guard let userSettings = userSettings else {
+            return
+        }
+
+        Task {
+            let translatedMessage = try? await translateManager.translate(message.message,
+                                                                          from: userSettings.language.identifier,
+                                                                          to: message.languageIdentifier)
+            self.message = SpeechMessage(message: translatedMessage ?? "",
+                                         languageIdentifier: message.languageIdentifier,
+                                         name: message.name)
+        }
+        
     }
 }

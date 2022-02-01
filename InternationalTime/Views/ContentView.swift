@@ -38,6 +38,7 @@ struct ContentView: View {
                 }
                 .onAppear {
                     speechRecognizer.setup(languageIdentifier: userSettings.language.identifier)
+                    viewModel.userSettings = userSettings
                 }
         }
     }
