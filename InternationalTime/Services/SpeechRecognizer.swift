@@ -96,7 +96,7 @@ class SpeechRecognizer: ObservableObject {
         request.shouldReportPartialResults = true
         
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.playback)
+        try audioSession.setCategory(.playback, options: .mixWithOthers)
         try audioSession.setActive(true)
         let inputNode = audioEngine.inputNode
         
