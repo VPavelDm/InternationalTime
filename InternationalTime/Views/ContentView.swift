@@ -10,7 +10,7 @@ import GroupActivities
 
 struct ContentView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
-    @StateObject private var viewModel = ContentViewModel()
+    @StateObject private var speechTogether = SpeechTogetherService()
     @StateObject private var groupStateObserver = GroupStateObserver()
     @State private var isSpeaking = false
     @State private var showSettings = false
@@ -33,12 +33,12 @@ struct ContentView: View {
                 }
                 .task {
                     for await session in SpeakTogether.sessions() {
-                        viewModel.configureGroupSession(session)
+                        speechTogether.configureGroupSession(session)
                     }
                 }
                 .onAppear {
                     speechRecognizer.setup(languageIdentifier: userSettings.language.identifier)
-                    viewModel.userSettings = userSettings
+                    speechTogether.userSettings = userSettings
                 }
         }
     }
@@ -71,7 +71,7 @@ struct ContentView: View {
             if !speechRecognizer.transcript.isEmpty {
                 speechCard(speechRecognizer.transcript, name: userSettings.name)
             }
-            if let message = viewModel.message {
+            if let message = speechTogether.message {
                 speechCard(message.message, name: message.name)
             }
         }
@@ -92,16 +92,16 @@ struct ContentView: View {
             } onRelease: {
                 isSpeaking = false
                 speechRecognizer.stopTranscribing()
-                viewModel.sendMessage(speechRecognizer.transcript,
+                speechTogether.sendMessage(speechRecognizer.transcript,
                                       name: userSettings.name,
                                       languageIdentifier: userSettings.language.identifier)
             }
     }
     @ViewBuilder
     var shareActivity: some View {
-        if viewModel.groupSession == nil && groupStateObserver.isEligibleForGroupSession {
+        if speechTogether.groupSession == nil && groupStateObserver.isEligibleForGroupSession {
             Button {
-                viewModel.startSharing()
+                speechTogether.startSharing()
             } label: {
                 Image(systemName: "person.2.fill")
             }

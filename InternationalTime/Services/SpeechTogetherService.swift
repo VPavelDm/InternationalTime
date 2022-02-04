@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  SpeechTogetherService.swift
 //  InternationalTime
 //
 //  Created by Pavel Vaitsikhouski on 31.01.22.
@@ -10,7 +10,7 @@ import SwiftUI
 import GroupActivities
 
 @MainActor
-class ContentViewModel: ObservableObject {
+class SpeechTogetherService: ObservableObject {
     
     // MARK: - Outputs
     @Published var groupSession: GroupSession<SpeakTogether>?
