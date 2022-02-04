@@ -92,6 +92,9 @@ struct ContentView: View {
             } onRelease: {
                 isSpeaking = false
                 speechRecognizer.stopTranscribing()
+                viewModel.sendMessage(speechRecognizer.transcript,
+                                      name: userSettings.name,
+                                      languageIdentifier: userSettings.language.identifier)
             }
     }
     @ViewBuilder
