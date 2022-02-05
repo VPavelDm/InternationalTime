@@ -10,16 +10,31 @@ import SwiftUI
 struct SettingsView: View {
     @State private var showChooseLanguages = false
     @EnvironmentObject var userSettings: UserSettings
-    
+    @Environment(\.presentationMode) private var presentation
+
     var body: some View {
+        NavigationView {
+            content
+                .popup(isPresented: $showChooseLanguages) {
+                    LanguagesView(language: $userSettings.language, isPresented: $showChooseLanguages)
+                }
+                .navigationTitle("Settings")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            presentation.wrappedValue.dismiss()
+                        } label: {
+                            Image(systemName: "xmark.circle")
+                        }
+                    }
+                }
+        }
+    }
+    var content: some View {
         Form {
             nameSection
             languageSection
         }
-        .popup(isPresented: $showChooseLanguages) {
-            LanguagesView(language: $userSettings.language, isPresented: $showChooseLanguages)
-        }
-        .navigationTitle("Settings")
     }
     
     var nameSection: some View {
