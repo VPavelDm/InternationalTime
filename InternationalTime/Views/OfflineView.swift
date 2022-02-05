@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OfflineView: View {
     @State private var showSettings = false
+    @State private var showTutorial = false
     @State private var startAnimation = false
     
     var body: some View {
@@ -16,6 +17,9 @@ struct OfflineView: View {
             content
                 .sheet(isPresented: $showSettings) {
                     SettingsView()
+                }
+                .sheet(isPresented: $showTutorial) {
+                    TutorialView()
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -68,7 +72,7 @@ struct OfflineView: View {
     }
     var tutorialButton: some View {
         Button {
-            
+            showTutorial = true
         } label: {
             Text("Как пользоваться приложением")
                 .font(.system(size: 20, weight: .semibold))

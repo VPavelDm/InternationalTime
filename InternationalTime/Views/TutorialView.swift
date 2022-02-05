@@ -8,7 +8,23 @@
 import SwiftUI
 
 struct TutorialView: View {
+    @Environment(\.presentationMode) private var presentation
+
     var body: some View {
+        NavigationView {
+            content
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            presentation.wrappedValue.dismiss()
+                        } label: {
+                            Image(systemName: "xmark.circle")
+                        }
+                    }
+                }
+        }
+    }
+    var content: some View {
         TabView {
             faceTime
             openApp
