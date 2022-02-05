@@ -11,7 +11,7 @@ import SwiftUI
 struct InternationalTimeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OfflineView()
                 .environmentObject(UserSettings())
         }
     }

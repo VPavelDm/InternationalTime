@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct OfflineView: View {
+    @State private var showSettings = false
+    
     var body: some View {
         NavigationView {
             content
+                .sheet(isPresented: $showSettings) {
+                    SettingsView()
+                }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
-                            
+                            showSettings = true
                         } label: {
                             Image(systemName: "gearshape")
                         }
