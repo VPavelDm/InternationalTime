@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OfflineView: View {
     @State private var showSettings = false
+    @State private var startAnimation = false
     
     var body: some View {
         NavigationView {
@@ -30,10 +31,24 @@ struct OfflineView: View {
     var content: some View {
         VStack(spacing: 16) {
             Spacer()
+            textBubbleIcon
+            Spacer()
             texts
             actions
         }
         .padding(.bottom, 32)
+    }
+    var textBubbleIcon: some View {
+        Image(systemName: "text.bubble")
+            .resizable()
+            .frame(width: 120, height: 120)
+            .rotation3DEffect(startAnimation ? Angle.zero : Angle.radians(2 * .pi),
+                              axis: (0, 1, 0))
+            .animation(.linear(duration: 3),
+                       value: startAnimation)
+            .onAppear {
+                startAnimation = true
+            }
     }
     var texts: some View {
         VStack(spacing: 12) {
