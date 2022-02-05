@@ -22,6 +22,7 @@
 		4A2DCEDD27A6DBA100F32B59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2DCEDC27A6DBA100F32B59 /* Preview Assets.xcassets */; };
 		4A577E5327AD6F7D009ABCD9 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A577E5227AD6F7D009ABCD9 /* OfflineView.swift */; };
 		4A577E5527AD70F4009ABCD9 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A577E5427AD70F4009ABCD9 /* TutorialView.swift */; };
+		4A577E6027AEB0FB009ABCD9 /* TutorialStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A577E5F27AEB0FB009ABCD9 /* TutorialStepView.swift */; };
 		4A999D4D27A85BF3002A5D04 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D4C27A85BF3002A5D04 /* SpeechRecognizer.swift */; };
 		4A999D5027A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */; };
 		4A999D5227A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */; };
@@ -49,6 +50,7 @@
 		4A2DCEDC27A6DBA100F32B59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A577E5227AD6F7D009ABCD9 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		4A577E5427AD70F4009ABCD9 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		4A577E5F27AEB0FB009ABCD9 /* TutorialStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStepView.swift; sourceTree = "<group>"; };
 		4A999D4C27A85BF3002A5D04 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		4A999D4F27A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer + hasAuthorizationToRecognize.swift"; sourceTree = "<group>"; };
 		4A999D5127A85CF0002A5D04 /* AVAudioSession + hasPermissionToRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession + hasPermissionToRecord.swift"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				4A16689427A95FAB00564DFE /* LanguagesView.swift */,
 				4A577E5227AD6F7D009ABCD9 /* OfflineView.swift */,
 				4A577E5427AD70F4009ABCD9 /* TutorialView.swift */,
+				4A577E5F27AEB0FB009ABCD9 /* TutorialStepView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				4A999D5C27A87147002A5D04 /* SpeechTogetherService.swift in Sources */,
 				4A577E5527AD70F4009ABCD9 /* TutorialView.swift in Sources */,
 				4A2DCED627A6DB9F00F32B59 /* InternationalTimeApp.swift in Sources */,
+				4A577E6027AEB0FB009ABCD9 /* TutorialStepView.swift in Sources */,
 				4A999D5727A868D6002A5D04 /* PressGesture.swift in Sources */,
 				4A16688C27A9481400564DFE /* SettingsView.swift in Sources */,
 				4A999D5027A85CD2002A5D04 /* SFSpeechRecognizer + hasAuthorizationToRecognize.swift in Sources */,

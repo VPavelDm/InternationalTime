@@ -13,6 +13,7 @@ struct TutorialView: View {
     var body: some View {
         NavigationView {
             content
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
@@ -26,24 +27,21 @@ struct TutorialView: View {
     }
     var content: some View {
         TabView {
-            faceTime
-            openApp
+            TutorialStepView(imageName: "FaceTime",
+                             title: "Start a FaceTime Call",
+                             description: "Start a video or audio call using FaceTime with a friend, family member or business partner")
+            TutorialStepView(imageName: "FaceTime",
+                             title: "Open the App",
+                             description: "While staying on the call, return to your homescreen and open the App.")
+            TutorialStepView(imageName: "FaceTime",
+                             title: "Enable Subtitles",
+                             description: "Tap the \"Enable Subtitles\" button to invite the other people on the FaceTime call to the App.")
+            TutorialStepView(imageName: "FaceTime",
+                             title: "Wait for others to join",
+                             description: "The other people on the call will get a popup telling them to enable SharePlay, after which they can tap on \"Open\".")
         }
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
-    }
-    var faceTime: some View {
-        VStack {
-            Image("FaceTime")
-            Text("Start a FaceTime Call")
-            Text("Start a video or audio call using FaceTime with a friend, family member or business partner")
-        }
-    }
-    var openApp: some View {
-        VStack {
-            Text("Open the App")
-            Text("While staying on the call, return to your homescreen and open the App.")
-        }
     }
 }
 
